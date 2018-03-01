@@ -4,14 +4,10 @@ import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     int score = 0;
     CountDownTimer ct = null;
     int total_questions = 0;
+    int count =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 tv1.setText(" 00 ");
                 Intent in2=new Intent(getApplicationContext(),ScoreView.class);
                 in2.putExtra("scores",Integer.toString(score));
+                in2.putExtra("totalQ",Integer.toString(count));
                 startActivity(in2);
 
 
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         Button b3 = (Button) findViewById(R.id.button3);
         Button b4 = (Button) findViewById(R.id.button4);
         TextView tv2 = (TextView) findViewById(R.id.question_text_view);
-        Button b5 =(Button)findViewById(R.id.restart_btn);
+        Button b5 =(Button)findViewById(R.id.Scv);
 
 
         int a, b, c = 0;
@@ -102,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                             ct.start();
 
                         if (time > 0) {
+                            count++;
                             int s1 = Integer.parseInt((String) tv3.getText());
                             s1 = s1 + 1;
                             score = s1;
@@ -122,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (time > 0) {
+                            count++;
                             total_questions = total_questions + 1;
                             newActivity();
                         } else
@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (time > 0) {
+                            count++;
                             total_questions = total_questions + 1;
                             newActivity();
                         } else
@@ -148,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (time > 0) {
+                            count++;
                             total_questions = total_questions + 1;
                             newActivity();
                         } else
@@ -160,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Intent i = new Intent(getApplicationContext(),SplashScreen.class);
+                        startActivity(i);
                     }
                 });
                 break;
@@ -178,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
                         if (total_questions == 0)
                             ct.start();
                         if (time > 0) {
+                            count++;
                             int s1 = Integer.parseInt((String) tv3.getText());
                             s1 = s1 + 1;
                             score = s1;
@@ -198,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         if (time > 0) {
                             total_questions = total_questions + 1;
+                            count++;
                             newActivity();
 
                         } else
@@ -211,6 +216,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (time > 0) {
+                            count++;
                             total_questions = total_questions + 1;
                             newActivity();
 
@@ -225,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (time > 0) {
+                            count++;
                             total_questions = total_questions + 1;
                             newActivity();
 
@@ -238,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Intent i = new Intent(getApplicationContext(),SplashScreen.class);
+                        startActivity(i);
                     }
                 });
                 break;
@@ -257,6 +265,7 @@ public class MainActivity extends AppCompatActivity {
                         if (total_questions == 0)
                             ct.start();
                         if (time > 0) {
+                            count++;
                             int s1 = Integer.parseInt((String) tv3.getText());
                             s1 = s1+ 1;
                             score = s1;
@@ -275,6 +284,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (time > 0) {
+                            count++;
                             total_questions = total_questions + 1;
                             newActivity();
 
@@ -289,6 +299,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (time > 0) {
+                            count++;
                             total_questions = total_questions + 1;
                             newActivity();
 
@@ -303,6 +314,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (time > 0) {
+                            count++;
                             total_questions = total_questions + 1;
                             newActivity();
 
@@ -316,6 +328,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Intent i = new Intent(getApplicationContext(),SplashScreen.class);
+                        startActivity(i);
                     }
                 });
                 break;
@@ -334,6 +347,7 @@ public class MainActivity extends AppCompatActivity {
                         if (total_questions == 0)
                             ct.start();
                         if (time > 0) {
+                            count++;
                             int s1 = Integer.parseInt((String) tv3.getText());
                             s1 = s1 + 1;
                             score = s1;
@@ -353,6 +367,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (time > 0) {
+                            count++;
                             total_questions = total_questions + 1;
                             newActivity();
 
@@ -367,6 +382,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (time > 0) {
+                            count++;
                             total_questions = total_questions + 1;
                             newActivity();
 
@@ -381,6 +397,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (time > 0) {
+                            count++;
                             total_questions = total_questions + 1;
                             newActivity();
                         } else
@@ -393,6 +410,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         Intent i = new Intent(getApplicationContext(),SplashScreen.class);
+                        startActivity(i);
                     }
                 });
                 break;
